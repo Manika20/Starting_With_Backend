@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+         <%= title %>
+        </title>
+        <style>
+            body{
+                text-align: center;
+                font-size: 1.2rem;
+            }
+            form input,button{
+                margin:9px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            ENTER THE Data !!
+        </h1>
+         <form action="/formdata" method="POST">
+            <input type="text" placeholder="Enter name" name="name" >
+            <input type ="number" placeholder="Enter Number" name="phone">
+            <button type="submit">Submit Data</button>
+         </form>
+    </body>
+</html>
