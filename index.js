@@ -1,9 +1,16 @@
 const express = require('express');
 const app = express();
 const port =8000;
+//connection to database.
+const db = require('./config/mongoose')
+
 
 //to encode the string body
 app.use(express.urlencoded());
+
+//schema
+//const list = require('./models/todolist')
+
 
 //use express router
 // any request that comes in goes to routes.than routes deside

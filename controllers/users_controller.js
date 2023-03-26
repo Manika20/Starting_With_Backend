@@ -1,6 +1,20 @@
-module.exports.profile = function(req,res)
+const list = require('../models/todolist')
+//console.log(list);
+module.exports.post = function(req,res)
 {
-   return res.render('user',{
-        title : "USERS"
-    })
+
+    list.find({},function(err,tasks)
+    {
+        if(err)
+        {
+            console.log("error in fetching!!");
+            return;
+        }
+        //console.log("SUccessfullll!!")
+        return res.render('user',
+        {
+        title:"User", 
+        todo_list: tasks
+       });
+    });
 }

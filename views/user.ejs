@@ -22,5 +22,23 @@
             <input type ="number" placeholder="Enter Number" name="phone">
             <button type="submit">Submit Data</button>
          </form>
+         <h1 id="page-heading">
+            <i class="fa-solid fa-suitcase"></i>
+
+            TO DO List
+        </h1>
+        <ul>
+           <%for(let i of todo_list)
+           {%>
+            <li>
+                <p><%=i.task%></p>
+                <p><%=i.date%></p>
+                
+            </li>
+            <%}%>
+        </ul>
+        <script  src="https://kit.fontawesome.com/b3348ae33f.js"
+        crossorigin="anonymous"
+    ></script>
     </body>
 </html>
