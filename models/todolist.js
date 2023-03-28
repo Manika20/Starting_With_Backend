@@ -14,6 +14,7 @@ const contactSchema = new mongoose.Schema(
         {
             type:Boolean
         }
+       
     }
 )
 const List = mongoose.model('List',contactSchema);

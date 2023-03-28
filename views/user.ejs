@@ -3,25 +3,23 @@
         <title>
          <%= title %>
         </title>
-        <style>
-            body{
-                text-align: center;
-                font-size: 1.2rem;
-            }
-            form input,button{
-                margin:9px;
-            }
-        </style>
+       
+        <link rel="stylesheet" href="css/user.css">
     </head>
     <body>
         <h1>
             ENTER THE Data !!
         </h1>
          <form action="/formdata" method="POST">
-            <input type="text" placeholder="Enter name" name="name" >
-            <input type ="number" placeholder="Enter Number" name="phone">
+            <input type="text" placeholder="Enter Task" name="task" >
+            <input type ="date" placeholder="Enter Date" name="date">
             <button type="submit">Submit Data</button>
          </form>
+         <div>
+            <button type="submit" id="delete">
+                DELETE
+            </button>
+         </div>
          <h1 id="page-heading">
             <i class="fa-solid fa-suitcase"></i>
 
@@ -31,14 +29,25 @@
            <%for(let i of todo_list)
            {%>
             <li>
-                <p><%=i.task%></p>
+               <p>
+     <input 
+        id="checkbox" type="checkbox"
+         class="checkbox" data-done=<%= i.done %>
+          data-id=<%=i._id%> <%=i.done ?'checked':''%>> 
+         </p>
+                 <p><%=i.task%></p>
                 <p><%=i.date%></p>
-                
-            </li>
+        </li>
             <%}%>
         </ul>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
         <script  src="https://kit.fontawesome.com/b3348ae33f.js"
         crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="/js/user.js">
+        
+    </script>
     </body>
 </html>

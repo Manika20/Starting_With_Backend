@@ -16,6 +16,8 @@ app.use(express.urlencoded());
 // any request that comes in goes to routes.than routes deside
 app.use('/',require('./routes'));
 
+// using the assets
+app.use(express.static('assets'));
 //set up the view engine
 app.set('view engine',"ejs");
 app.set('views','./views');
