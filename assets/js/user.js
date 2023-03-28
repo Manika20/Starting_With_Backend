@@ -34,7 +34,7 @@ deletetask.addEventListener('click',function()
                 url: "/deletetask/?id="+checkbox[i].dataset.id ,
                 success: function(data){
                   //do something with the data via front-end framework
-                  //location.reload();
+                  location.reload();
                 }
               });
         }

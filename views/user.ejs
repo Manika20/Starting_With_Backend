@@ -7,12 +7,16 @@
         <link rel="stylesheet" href="css/user.css">
     </head>
     <body>
+        <%- include('_header');%>
+        <h1>
+            Codeial!!<%=title%>
+        </h1>
         <h1>
             ENTER THE Data !!
         </h1>
          <form action="/formdata" method="POST">
-            <input type="text" placeholder="Enter Task" name="task" >
-            <input type ="date" placeholder="Enter Date" name="date">
+            <input type="text" placeholder="Enter Task" name="task" required>
+            <input type ="date" placeholder="Enter Date" name="date" required>
             <button type="submit">Submit Data</button>
          </form>
          <div>
@@ -20,11 +24,14 @@
                 DELETE
             </button>
          </div>
-         <h1 id="page-heading">
-            <i class="fa-solid fa-suitcase"></i>
-
-            TO DO List
-        </h1>
+         <div>
+            <h1 id="page-heading">
+                <i class="fa-solid fa-suitcase"></i>
+    
+                TO DO List
+            </h1>
+         </div>
+         
         <ul>
            <%for(let i of todo_list)
            {%>
@@ -40,6 +47,7 @@
         </li>
             <%}%>
         </ul>
+        <%- include('_footer');%>
         <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>

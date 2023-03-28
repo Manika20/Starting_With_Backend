@@ -1,6 +1,15 @@
 const express = require('express');
 const app = express();
 const port =8000;
+// using the assets
+app.use(express.static('assets'));
+
+//layouts library
+const expressLayouts = require('express-ejs-layouts');
+app.use(expressLayouts);
+// abstract styles and scripts from subpages to layouts.
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 //connection to database.
 const db = require('./config/mongoose')
 
@@ -16,8 +25,7 @@ app.use(express.urlencoded());
 // any request that comes in goes to routes.than routes deside
 app.use('/',require('./routes'));
 
-// using the assets
-app.use(express.static('assets'));
+
 //set up the view engine
 app.set('view engine',"ejs");
 app.set('views','./views');
